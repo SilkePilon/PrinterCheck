@@ -6,7 +6,6 @@ import { useAppStore } from '@/lib/store';
 import { mockPrinters, mockPrintJobs } from '@/lib/mock-data';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import {
   Dialog,
   DialogContent,

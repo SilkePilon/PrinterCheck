@@ -40,26 +40,14 @@ import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
 import {
   Clock,
-  Printer,
   CheckCircle,
   XCircle,
   AlertTriangle,
   FileText,
-  Calendar,
-  Timer,
-  CreditCard,
   Play,
-  Pause,
   X,
   Eye,
-  MoreHorizontal,
 } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import type { PrintJob } from '@/lib/types';
 
 export default function MyPrints() {

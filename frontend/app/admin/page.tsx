@@ -49,27 +49,21 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import {
-  Settings,
   Plus,
   Trash2,
   Edit,
   Power,
   PowerOff,
   Wrench,
-  Users,
   Activity,
   CheckCircle,
   XCircle,
   AlertTriangle,
-  Printer,
-  Clock,
   CreditCard,
   MoreHorizontal,
   Eye,
   Ban,
   Play,
-  Pause,
-  UserCheck,
   UserX,
 } from 'lucide-react';
 import {
@@ -78,7 +72,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import type { Printer as PrinterType, User } from '@/lib/types';
+import type { Printer as PrinterType, User, PrintJob } from '@/lib/types';
 
 export default function AdminPanel() {
   const { data: session } = useSession();
@@ -177,7 +171,7 @@ export default function AdminPanel() {
   };
 
   const handleUpdateJobStatus = (jobId: string, status: string) => {
-    updatePrintJob(jobId, { status: status as any, updatedAt: new Date() });
+    updatePrintJob(jobId, { status: status as PrintJob['status'], updatedAt: new Date() });
   };
 
   const getStatusIcon = (status: string) => {
@@ -321,7 +315,7 @@ export default function AdminPanel() {
                     <Label htmlFor="brand">Merk</Label>
                     <Select 
                       value={newPrinter.brand} 
-                      onValueChange={(value) => setNewPrinter({ ...newPrinter, brand: value as any })}
+                      onValueChange={(value) => setNewPrinter({ ...newPrinter, brand: value as 'Bambu Lab X1C' | 'Ultimaker' })}
                     >
                       <SelectTrigger>
                         <SelectValue />
