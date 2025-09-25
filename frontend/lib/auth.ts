@@ -1,5 +1,4 @@
 import { NextAuthOptions } from "next-auth";
-import { JWT } from "next-auth/jwt";
 import type { User } from "@/lib/types";
 
 // For demo purposes, we'll use a simple provider
@@ -63,7 +62,8 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.role = (user as any).role;
+        const userWithRole = user as typeof user & { role?: 'student' | 'admin' };
+        token.role = userWithRole.role;
         token.userId = user.id;
         
         // Get user data from mock database
