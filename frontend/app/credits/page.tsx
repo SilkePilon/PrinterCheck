@@ -7,8 +7,7 @@ import { mockCreditTransactions } from '@/lib/mock-data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Table,
   TableBody,
@@ -225,7 +224,7 @@ export default function Credits() {
               <History className="h-5 w-5" />
               <span>Transactie Geschiedenis</span>
             </CardTitle>
-            <Tabs value={selectedPeriod} onValueChange={(value) => setSelectedPeriod(value as any)}>
+              <Tabs value={selectedPeriod} onValueChange={(value) => setSelectedPeriod(value as 'week' | 'month' | 'all')}>
               <TabsList>
                 <TabsTrigger value="week">Deze Week</TabsTrigger>
                 <TabsTrigger value="month">Deze Maand</TabsTrigger>

@@ -1,16 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import type { User } from "@/lib/types";
 
-// For demo purposes, we'll use a simple provider
-// In production, you'd use the actual AzureAD provider
-const AzureADProvider = () => ({
-  id: "azure-ad",
-  name: "Azure AD",
-  type: "oauth" as const,
-  clientId: process.env.AZURE_AD_CLIENT_ID!,
-  clientSecret: process.env.AZURE_AD_CLIENT_SECRET!,
-});
-
 // Mock user database - in production, this would be a real database
 const mockUsers: User[] = [
   {

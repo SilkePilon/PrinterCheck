@@ -27,10 +27,6 @@ import {
   Activity,
   AlertTriangle,
   MapPin,
-  Calendar,
-  Timer,
-  Users,
-  TrendingUp,
   Ban,
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
