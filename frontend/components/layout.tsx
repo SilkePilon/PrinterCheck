@@ -9,7 +9,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   if (status === 'loading') {
     return (
